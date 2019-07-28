@@ -1,22 +1,26 @@
 var body = document.body;
-var text = "";
-var p = document.createElement("p");
-
+var container = document.createElement('div');
+container.className = "container";
+body.append(container);
 var num = 1;
 
 while (num <= 100) {
+    var p = document.createElement("p");
+    p.className = "box";
     if (num % 3 === 0) {
-        text += "fizz \n";
+        p.innerText = "fizz";
+        container.append(p);
     }
     if (num % 5 === 0) {
-        text += "buzz \n";
+        p.innerText = "buzz";
+        container.append(p);
     }
 
     if (num % 3 != 0 && num % 5 != 0) {
-        text += (num + "\n");
+        p.innerText = num;
+        container.append(p);
     }
     num++;
 };
 
-p.innerText = text;
-body.append(p);
+
